@@ -1,0 +1,28 @@
+{
+  "name": "fastify-crud",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "dev": "nodemon --env-file=dev.env dist",
+    "db:migrate": "node --env-file=dev.env dist/migrate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/type-provider-typebox": "^4.0.0",
+    "@sinclair/typebox": "^0.32.20",
+    "drizzle-orm": "^0.30.6",
+    "drizzle-typebox": "^0.1.1",
+    "fastify": "^4.26.2",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "drizzle-kit": "^0.20.14",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.3"
+  }
+}
