@@ -12,15 +12,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/cookie": "^9.3.1",
+    "@fastify/passport": "^2.4.0",
+    "@fastify/session": "^10.7.0",
     "@fastify/type-provider-typebox": "^4.0.0",
     "@sinclair/typebox": "^0.32.20",
     "drizzle-orm": "^0.30.6",
     "drizzle-typebox": "^0.1.1",
     "fastify": "^4.26.2",
+    "passport-http-bearer": "^1.0.1",
     "postgres": "^3.4.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
+    "@types/passport-http-bearer": "^1.0.41",
     "drizzle-kit": "^0.20.14",
     "nodemon": "^3.1.0",
     "typescript": "^5.4.3"

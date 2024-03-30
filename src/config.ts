@@ -11,6 +11,9 @@ export type AppConfig = {
     password: string;
     name: string;
   };
+  session: {
+    secret: string;
+  };
 };
 
 const Environment = Type.Object({
@@ -21,6 +24,7 @@ const Environment = Type.Object({
   DB_USER: Type.String({ default: "postgres" }),
   DB_PASSWORD: Type.String({ default: "postgres" }),
   DB_NAME: Type.String({ default: "postgres" }),
+  SESSION_SECRET: Type.String({ default: "" }),
 });
 
 const env = parseEnv(Environment, process.env);
@@ -34,5 +38,8 @@ export const appConfig: AppConfig = {
     user: env.DB_USER,
     password: env.DB_PASSWORD,
     name: env.DB_NAME,
+  },
+  session: {
+    secret: env.SESSION_SECRET,
   },
 };

@@ -1,6 +1,9 @@
 import Fastify, { type FastifyInstance } from "fastify";
 import { appConfig } from "./config";
 import v1 from "./routes/v1";
+import passport from "./passport";
+import fastifySession from "@fastify/session";
+import fastifyCookie from "@fastify/cookie";
 
 export async function createServer(): Promise<FastifyInstance> {
   const fastify: FastifyInstance = Fastify({});
@@ -8,6 +11,12 @@ export async function createServer(): Promise<FastifyInstance> {
 
   // Register routes
   fastify.register(v1, { prefix: "/v1" });
+
+  fastify.register(fastifyCookie);
+  fastify.register(fastifySession, {
+    secret: appConfig.session.secret,
+  });
+  fastify.register(passport.initialize());
 
   await fastify.ready();
   return fastify;
